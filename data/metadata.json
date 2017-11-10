@@ -1,100 +1,536 @@
 {
   "Edmx": {
-    "xmlns:edmx": "http://docs.oasis-open.org/odata/ns/edmx",
     "Version": "4.0",
+    "xmlns:edmx": "http://docs.oasis-open.org/odata/ns/edmx",
     "DataServices": {
       "Schema": {
-        "xmlns": "http://docs.oasis-open.org/odata/ns/edm",
         "Namespace": "microsoft.graph",
+        "xmlns": "http://docs.oasis-open.org/odata/ns/edm",
         "EnumType": [
           {
-            "Name": "approvalType",
+            "Name": "attributeFlowType",
             "Member": [
               {
-                "Name": "assignment",
+                "Name": "Always",
                 "Value": "0"
               },
               {
-                "Name": "activation",
+                "Name": "ObjectAddOnly",
+                "Value": "1"
+              },
+              {
+                "Name": "MultiValueAddOnly",
+                "Value": "2"
+              }
+            ]
+          },
+          {
+            "Name": "attributeFlowBehavior",
+            "Member": [
+              {
+                "Name": "FlowWhenChanged",
+                "Value": "0"
+              },
+              {
+                "Name": "FlowAlways",
                 "Value": "1"
               }
             ]
           },
           {
-            "Name": "approvalState",
+            "Name": "attributeMappingSourceType",
             "Member": [
               {
-                "Name": "pending",
+                "Name": "Attribute",
                 "Value": "0"
               },
               {
-                "Name": "approved",
+                "Name": "Constant",
                 "Value": "1"
               },
               {
-                "Name": "denied",
+                "Name": "Function",
+                "Value": "2"
+              }
+            ]
+          },
+          {
+            "Name": "entryExportStatus",
+            "Member": [
+              {
+                "Name": "Noop",
+                "Value": "0"
+              },
+              {
+                "Name": "Success",
+                "Value": "1"
+              },
+              {
+                "Name": "RetryableError",
                 "Value": "2"
               },
               {
-                "Name": "aborted",
+                "Name": "PermanentError",
                 "Value": "3"
+              },
+              {
+                "Name": "Error",
+                "Value": "4"
               }
             ]
           },
           {
-            "Name": "roleSummaryStatus",
+            "Name": "attributeType",
             "Member": [
               {
-                "Name": "ok",
-                "Value": "0"
-              },
-              {
-                "Name": "bad",
-                "Value": "1"
-              }
-            ]
-          },
-          {
-            "Name": "setupStatus",
-            "Member": [
-              {
-                "Name": "unknown",
-                "Value": "0"
-              },
-              {
-                "Name": "notRegisteredYet",
-                "Value": "1"
-              },
-              {
-                "Name": "registeredSetupNotStarted",
-                "Value": "2"
-              },
-              {
-                "Name": "registeredSetupInProgress",
-                "Value": "3"
-              },
-              {
-                "Name": "registrationAndSetupCompleted",
+                "Name": "Boolean",
                 "Value": "4"
               },
               {
-                "Name": "registrationFailed",
+                "Name": "Binary",
+                "Value": "3"
+              },
+              {
+                "Name": "Reference",
+                "Value": "2"
+              },
+              {
+                "Name": "Integer",
+                "Value": "1"
+              },
+              {
+                "Name": "String",
+                "Value": "0"
+              }
+            ]
+          },
+          {
+            "Name": "entrySyncOperation",
+            "Member": [
+              {
+                "Name": "None",
+                "Value": "0"
+              },
+              {
+                "Name": "Add",
+                "Value": "1"
+              },
+              {
+                "Name": "Delete",
+                "Value": "2"
+              },
+              {
+                "Name": "Update",
+                "Value": "3"
+              }
+            ]
+          },
+          {
+            "Name": "mutability",
+            "Member": [
+              {
+                "Name": "ReadWrite",
+                "Value": "0"
+              },
+              {
+                "Name": "ReadOnly",
+                "Value": "1"
+              },
+              {
+                "Name": "Immutable",
+                "Value": "2"
+              },
+              {
+                "Name": "WriteOnly",
+                "Value": "3"
+              }
+            ]
+          },
+          {
+            "Name": "objectFlowTypes",
+            "IsFlags": "true",
+            "Member": [
+              {
+                "Name": "None",
+                "Value": "0"
+              },
+              {
+                "Name": "Add",
+                "Value": "1"
+              },
+              {
+                "Name": "Update",
+                "Value": "2"
+              },
+              {
+                "Name": "Delete",
+                "Value": "4"
+              }
+            ]
+          },
+          {
+            "Name": "synchronizationSecret",
+            "Member": [
+              {
+                "Name": "None",
+                "Value": "0"
+              },
+              {
+                "Name": "UserName",
+                "Value": "1"
+              },
+              {
+                "Name": "Password",
+                "Value": "2"
+              },
+              {
+                "Name": "SecretToken",
+                "Value": "3"
+              },
+              {
+                "Name": "AppKey",
+                "Value": "4"
+              },
+              {
+                "Name": "BaseAddress",
                 "Value": "5"
               },
               {
-                "Name": "registrationTimedOut",
+                "Name": "ClientIdentifier",
                 "Value": "6"
               },
               {
-                "Name": "disabled",
+                "Name": "ClientSecret",
                 "Value": "7"
+              },
+              {
+                "Name": "SingleSignOnType",
+                "Value": "11"
+              },
+              {
+                "Name": "Sandbox",
+                "Value": "12"
+              },
+              {
+                "Name": "Url",
+                "Value": "13"
+              },
+              {
+                "Name": "Domain",
+                "Value": "14"
+              },
+              {
+                "Name": "ConsumerKey",
+                "Value": "15"
+              },
+              {
+                "Name": "ConsumerSecret",
+                "Value": "16"
+              },
+              {
+                "Name": "TokenKey",
+                "Value": "17"
+              },
+              {
+                "Name": "TokenExpiration",
+                "Value": "18"
+              },
+              {
+                "Name": "Oauth2AccessToken",
+                "Value": "19"
+              },
+              {
+                "Name": "Oauth2AccessTokenCreationTime",
+                "Value": "20"
+              },
+              {
+                "Name": "Oauth2RefreshToken",
+                "Value": "21"
+              },
+              {
+                "Name": "SyncAll",
+                "Value": "22"
+              },
+              {
+                "Name": "InstanceName",
+                "Value": "24"
+              },
+              {
+                "Name": "Oauth2ClientId",
+                "Value": "27"
+              },
+              {
+                "Name": "Oauth2ClientSecret",
+                "Value": "28"
+              },
+              {
+                "Name": "CompanyId",
+                "Value": "29"
+              },
+              {
+                "Name": "UpdateKeyOnSoftDelete",
+                "Value": "30"
+              },
+              {
+                "Name": "SynchronizationSchedule",
+                "Value": "33"
+              },
+              {
+                "Name": "SystemOfRecord",
+                "Value": "34"
+              },
+              {
+                "Name": "SandboxName",
+                "Value": "35"
+              },
+              {
+                "Name": "EnforceDomain",
+                "Value": "36"
+              },
+              {
+                "Name": "SyncNotificationSettings",
+                "Value": "37"
+              },
+              {
+                "Name": "Server",
+                "Value": "70"
+              },
+              {
+                "Name": "PerformInboundEntitlementGrants",
+                "Value": "100"
+              },
+              {
+                "Name": "HardDeletesEnabled",
+                "Value": "101"
+              },
+              {
+                "Name": "SyncAgentCompatibilityKey",
+                "Value": "102"
+              },
+              {
+                "Name": "SyncAgentADContainer",
+                "Value": "103"
+              },
+              {
+                "Name": "ValidateDomain",
+                "Value": "206"
+              },
+              {
+                "Name": "TestReferences",
+                "Value": "207"
+              }
+            ]
+          },
+          {
+            "Name": "synchronizationStatusCode",
+            "Member": [
+              {
+                "Name": "NotConfigured",
+                "Value": "0"
+              },
+              {
+                "Name": "NotRun",
+                "Value": "1"
+              },
+              {
+                "Name": "Active",
+                "Value": "2"
+              },
+              {
+                "Name": "Paused",
+                "Value": "3"
+              },
+              {
+                "Name": "Quarantine",
+                "Value": "4"
+              }
+            ]
+          },
+          {
+            "Name": "synchronizationTaskExecutionResult",
+            "Member": [
+              {
+                "Name": "Succeeded",
+                "Value": "0"
+              },
+              {
+                "Name": "Failed",
+                "Value": "1"
+              },
+              {
+                "Name": "EntryLevelErrors",
+                "Value": "2"
+              }
+            ]
+          },
+          {
+            "Name": "synchronizationJobRestartScope",
+            "IsFlags": "true",
+            "Member": [
+              {
+                "Name": "Full",
+                "Value": "15"
+              },
+              {
+                "Name": "QuarantineState",
+                "Value": "8"
+              },
+              {
+                "Name": "Watermark",
+                "Value": "4"
+              },
+              {
+                "Name": "Escrows",
+                "Value": "2"
+              },
+              {
+                "Name": "ConnectorDataStore",
+                "Value": "1"
+              },
+              {
+                "Name": "None",
+                "Value": "0"
+              }
+            ]
+          },
+          {
+            "Name": "quarantineReason",
+            "Member": [
+              {
+                "Name": "EncounteredBaseEscrowThreshold",
+                "Value": "0"
+              },
+              {
+                "Name": "EncounteredTotalEscrowThreshold",
+                "Value": "1"
+              },
+              {
+                "Name": "EncounteredEscrowProportionThreshold",
+                "Value": "2"
+              },
+              {
+                "Name": "EncounteredQuarantineException",
+                "Value": "4"
+              },
+              {
+                "Name": "Unknown",
+                "Value": "8"
+              }
+            ]
+          },
+          {
+            "Name": "synchronizationScheduleState",
+            "Member": [
+              {
+                "Name": "Active",
+                "Value": "0"
+              },
+              {
+                "Name": "Disabled",
+                "Value": "1"
+              }
+            ]
+          },
+          {
+            "Name": "scopeOperatorMultiValuedComparisonType",
+            "Member": [
+              {
+                "Name": "All",
+                "Value": "0"
+              },
+              {
+                "Name": "Any",
+                "Value": "1"
+              }
+            ]
+          },
+          {
+            "Name": "scopeOperatorType",
+            "Member": [
+              {
+                "Name": "Binary",
+                "Value": "0"
+              },
+              {
+                "Name": "Unary",
+                "Value": "1"
               }
             ]
           }
         ],
         "EntityType": [
           {
-            "Name": "privilegedRole",
+            "Name": "servicePrincipal",
+            "Key": {
+              "PropertyRef": {
+                "Name": "id"
+              }
+            },
+            "Property": {
+              "Name": "id",
+              "Type": "Edm.String",
+              "Nullable": "false",
+              "Unicode": "false"
+            },
+            "NavigationProperty": {
+              "Name": "synchronization",
+              "Type": "microsoft.graph.synchronization",
+              "ContainsTarget": "true"
+            }
+          },
+          {
+            "Name": "synchronization",
+            "Key": {
+              "PropertyRef": {
+                "Name": "version"
+              }
+            },
+            "Property": [
+              {
+                "Name": "version",
+                "Type": "Edm.String",
+                "Nullable": "false",
+                "Unicode": "false"
+              },
+              {
+                "Name": "secrets",
+                "Type": "Collection(microsoft.graph.synchronizationSecretKeyStringValuePair)"
+              }
+            ],
+            "NavigationProperty": [
+              {
+                "Name": "jobs",
+                "Type": "Collection(microsoft.graph.synchronizationJob)",
+                "ContainsTarget": "true"
+              },
+              {
+                "Name": "templates",
+                "Type": "Collection(microsoft.graph.synchronizationTemplate)",
+                "ContainsTarget": "true"
+              }
+            ]
+          },
+          {
+            "Name": "application",
+            "Key": {
+              "PropertyRef": {
+                "Name": "id"
+              }
+            },
+            "Property": {
+              "Name": "id",
+              "Type": "Edm.String",
+              "Nullable": "false",
+              "Unicode": "false"
+            },
+            "NavigationProperty": {
+              "Name": "synchronization",
+              "Type": "microsoft.graph.synchronization",
+              "ContainsTarget": "true"
+            }
+          },
+          {
+            "Name": "synchronizationJob",
             "Key": {
               "PropertyRef": {
                 "Name": "id"
@@ -105,701 +541,1061 @@
                 "Name": "id",
                 "Type": "Edm.String",
                 "Nullable": "false",
+                "Unicode": "false"
+              },
+              {
+                "Name": "templateId",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "schedule",
+                "Type": "microsoft.graph.synchronizationSchedule"
+              },
+              {
+                "Name": "status",
+                "Type": "microsoft.graph.synchronizationStatus"
+              }
+            ],
+            "NavigationProperty": {
+              "Name": "schema",
+              "Type": "microsoft.graph.synchronizationSchema",
+              "ContainsTarget": "true"
+            }
+          },
+          {
+            "Name": "synchronizationTemplate",
+            "Key": {
+              "PropertyRef": {
+                "Name": "id"
+              }
+            },
+            "Property": [
+              {
+                "Name": "id",
+                "Type": "Edm.String",
+                "Nullable": "false",
+                "Unicode": "false"
+              },
+              {
+                "Name": "applicationId",
+                "Type": "Edm.Guid",
+                "Nullable": "false"
+              },
+              {
+                "Name": "default",
+                "Type": "Edm.Boolean",
+                "Nullable": "false"
+              },
+              {
+                "Name": "description",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "discoverable",
+                "Type": "Edm.Boolean",
+                "Nullable": "false"
+              },
+              {
+                "Name": "factoryTag",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "metadata",
+                "Type": "Collection(microsoft.graph.metadataEntry)"
+              }
+            ],
+            "NavigationProperty": {
+              "Name": "schema",
+              "Type": "microsoft.graph.synchronizationSchema",
+              "ContainsTarget": "true"
+            }
+          },
+          {
+            "Name": "synchronizationSchema",
+            "Key": {
+              "PropertyRef": {
+                "Name": "provisioningTaskIdentifier"
+              }
+            },
+            "Property": [
+              {
+                "Name": "provisioningTaskIdentifier",
+                "Type": "Edm.String",
+                "Nullable": "false",
+                "Unicode": "false"
+              },
+              {
+                "Name": "directories",
+                "Type": "Collection(microsoft.graph.directoryDefinition)"
+              },
+              {
+                "Name": "synchronizationRules",
+                "Type": "Collection(microsoft.graph.synchronizationRule)"
+              },
+              {
+                "Name": "version",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              }
+            ]
+          },
+          {
+            "Name": "attributeMappingFunctionSchema",
+            "Key": {
+              "PropertyRef": {
+                "Name": "name"
+              }
+            },
+            "Property": [
+              {
+                "Name": "name",
+                "Type": "Edm.String",
+                "Nullable": "false",
+                "Unicode": "false"
+              },
+              {
+                "Name": "parameters",
+                "Type": "Collection(microsoft.graph.attributeMappingParameterSchema)"
+              }
+            ]
+          },
+          {
+            "Name": "filterOperatorSchema",
+            "Key": {
+              "PropertyRef": {
+                "Name": "name"
+              }
+            },
+            "Property": [
+              {
+                "Name": "name",
+                "Type": "Edm.String",
+                "Nullable": "false",
+                "Unicode": "false"
+              },
+              {
+                "Name": "arity",
+                "Type": "microsoft.graph.scopeOperatorType",
+                "Nullable": "false"
+              },
+              {
+                "Name": "multivaluedComparisonType",
+                "Type": "microsoft.graph.scopeOperatorMultiValuedComparisonType",
+                "Nullable": "false"
+              },
+              {
+                "Name": "supportedAttributeTypes",
+                "Type": "Collection(microsoft.graph.attributeType)",
+                "Nullable": "false"
+              }
+            ]
+          }
+        ],
+        "ComplexType": [
+          {
+            "Name": "synchronizationSecretKeyStringValuePair",
+            "Property": [
+              {
+                "Name": "key",
+                "Type": "microsoft.graph.synchronizationSecret",
+                "Nullable": "false"
+              },
+              {
+                "Name": "value",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              }
+            ]
+          },
+          {
+            "Name": "metadataEntry",
+            "Property": [
+              {
+                "Name": "key",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "value",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              }
+            ]
+          },
+          {
+            "Name": "synchronizationSchedule",
+            "Property": [
+              {
+                "Name": "expiration",
+                "Type": "Edm.DateTimeOffset"
+              },
+              {
+                "Name": "interval",
+                "Type": "Edm.Duration",
+                "Nullable": "false"
+              },
+              {
+                "Name": "state",
+                "Type": "microsoft.graph.synchronizationScheduleState",
+                "Nullable": "false"
+              }
+            ]
+          },
+          {
+            "Name": "synchronizationStatus",
+            "Property": [
+              {
+                "Name": "countSuccessiveCompleteFailures",
+                "Type": "Edm.Int64",
+                "Nullable": "false"
+              },
+              {
+                "Name": "escrowsPruned",
+                "Type": "Edm.Boolean",
+                "Nullable": "false"
+              },
+              {
+                "Name": "synchronizedEntryCountByType",
+                "Type": "Collection(microsoft.graph.stringKeyLongValuePair)"
+              },
+              {
+                "Name": "code",
+                "Type": "microsoft.graph.synchronizationStatusCode",
+                "Nullable": "false"
+              },
+              {
+                "Name": "lastExecution",
+                "Type": "microsoft.graph.synchronizationTaskExecution"
+              },
+              {
+                "Name": "lastSuccessfulExecution",
+                "Type": "microsoft.graph.synchronizationTaskExecution"
+              },
+              {
+                "Name": "lastSuccessfulExecutionWithExports",
+                "Type": "microsoft.graph.synchronizationTaskExecution"
+              },
+              {
+                "Name": "steadyStateFirstAchievedTime",
+                "Type": "Edm.DateTimeOffset",
+                "Nullable": "false"
+              },
+              {
+                "Name": "steadyStateLastAchievedTime",
+                "Type": "Edm.DateTimeOffset",
+                "Nullable": "false"
+              },
+              {
+                "Name": "quarantine",
+                "Type": "microsoft.graph.synchronizationQuarantine"
+              },
+              {
+                "Name": "troubleshootingUrl",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              }
+            ]
+          },
+          {
+            "Name": "stringKeyLongValuePair",
+            "Property": [
+              {
+                "Name": "key",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "value",
+                "Type": "Edm.Int64",
+                "Nullable": "false"
+              }
+            ]
+          },
+          {
+            "Name": "synchronizationTaskExecution",
+            "Property": [
+              {
+                "Name": "activityIdentifier",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "countEntitled",
+                "Type": "Edm.Int64",
+                "Nullable": "false"
+              },
+              {
+                "Name": "countEntitledForProvisioning",
+                "Type": "Edm.Int64",
+                "Nullable": "false"
+              },
+              {
+                "Name": "countEscrowed",
+                "Type": "Edm.Int64",
+                "Nullable": "false"
+              },
+              {
+                "Name": "countEscrowedRaw",
+                "Type": "Edm.Int64",
+                "Nullable": "false"
+              },
+              {
+                "Name": "countExported",
+                "Type": "Edm.Int64",
+                "Nullable": "false"
+              },
+              {
+                "Name": "countExports",
+                "Type": "Edm.Int64",
+                "Nullable": "false"
+              },
+              {
+                "Name": "countImported",
+                "Type": "Edm.Int64",
+                "Nullable": "false"
+              },
+              {
+                "Name": "countImportedDeltas",
+                "Type": "Edm.Int64",
+                "Nullable": "false"
+              },
+              {
+                "Name": "countImportedReferenceDeltas",
+                "Type": "Edm.Int64",
+                "Nullable": "false"
+              },
+              {
+                "Name": "state",
+                "Type": "microsoft.graph.synchronizationTaskExecutionResult",
+                "Nullable": "false"
+              },
+              {
+                "Name": "error",
+                "Type": "microsoft.graph.synchronizationError"
+              },
+              {
+                "Name": "timeBegan",
+                "Type": "Edm.DateTimeOffset",
+                "Nullable": "false"
+              },
+              {
+                "Name": "timeEnded",
+                "Type": "Edm.DateTimeOffset",
+                "Nullable": "false"
+              }
+            ]
+          },
+          {
+            "Name": "synchronizationError",
+            "Property": [
+              {
+                "Name": "code",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "message",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "tenantActionable",
+                "Type": "Edm.Boolean",
+                "Nullable": "false"
+              }
+            ]
+          },
+          {
+            "Name": "synchronizationQuarantine",
+            "Property": [
+              {
+                "Name": "currentBegan",
+                "Type": "Edm.DateTimeOffset",
+                "Nullable": "false"
+              },
+              {
+                "Name": "nextAttempt",
+                "Type": "Edm.DateTimeOffset",
+                "Nullable": "false"
+              },
+              {
+                "Name": "reason",
+                "Type": "microsoft.graph.quarantineReason",
+                "Nullable": "false"
+              },
+              {
+                "Name": "seriesBegan",
+                "Type": "Edm.DateTimeOffset",
+                "Nullable": "false"
+              },
+              {
+                "Name": "seriesCount",
+                "Type": "Edm.Int64",
+                "Nullable": "false"
+              }
+            ]
+          },
+          {
+            "Name": "synchronizationJobRestartCriteria",
+            "Property": {
+              "Name": "resetScope",
+              "Type": "microsoft.graph.synchronizationJobRestartScope"
+            }
+          },
+          {
+            "Name": "directoryDefinition",
+            "Property": [
+              {
+                "Name": "id",
+                "Type": "Edm.String",
                 "Unicode": "false"
               },
               {
                 "Name": "name",
                 "Type": "Edm.String",
                 "Unicode": "false"
-              }
-            ],
-            "NavigationProperty": [
-              {
-                "Name": "settings",
-                "Type": "microsoft.graph.privilegedRoleSettings",
-                "ContainsTarget": "true"
               },
               {
-                "Name": "assignments",
-                "Type": "Collection(microsoft.graph.privilegedRoleAssignment)"
-              },
-              {
-                "Name": "summary",
-                "Type": "microsoft.graph.privilegedRoleSummary",
-                "ContainsTarget": "true"
+                "Name": "objects",
+                "Type": "Collection(microsoft.graph.objectDefinition)"
               }
             ]
           },
           {
-            "Name": "privilegedRoleSettings",
-            "Key": {
-              "PropertyRef": {
-                "Name": "id"
-              }
-            },
+            "Name": "objectDefinition",
             "Property": [
               {
-                "Name": "approverIds",
-                "Type": "Collection(Edm.String)",
-                "Unicode": "false"
+                "Name": "attributes",
+                "Type": "Collection(microsoft.graph.attributeDefinition)"
               },
               {
-                "Name": "minElevationDuration",
-                "Type": "Edm.Duration"
+                "Name": "metadata",
+                "Type": "Collection(microsoft.graph.metadataEntry)"
               },
               {
-                "Name": "maxElavationDuration",
-                "Type": "Edm.Duration"
-              },
-              {
-                "Name": "elevationDuration",
-                "Type": "Edm.Duration"
-              },
-              {
-                "Name": "id",
-                "Type": "Edm.String",
-                "Nullable": "false",
-                "Unicode": "false"
-              },
-              {
-                "Name": "notificationToUserOnElevation",
-                "Type": "Edm.Boolean"
-              },
-              {
-                "Name": "ticketingInfoOnElevation",
-                "Type": "Edm.Boolean"
-              },
-              {
-                "Name": "mfaOnElevation",
-                "Type": "Edm.Boolean"
-              },
-              {
-                "Name": "lastGlobalAdmin",
-                "Type": "Edm.Boolean"
-              },
-              {
-                "Name": "isMfaOnElevationConfigurable",
-                "Type": "Edm.Boolean"
-              },
-              {
-                "Name": "approvalOnElevation",
-                "Type": "Edm.Boolean"
-              }
-            ]
-          },
-          {
-            "Name": "privilegedRoleAssignment",
-            "Key": {
-              "PropertyRef": {
-                "Name": "id"
-              }
-            },
-            "Property": [
-              {
-                "Name": "id",
-                "Type": "Edm.String",
-                "Nullable": "false",
-                "Unicode": "false"
-              },
-              {
-                "Name": "userId",
-                "Type": "Edm.String",
-                "Nullable": "false",
-                "Unicode": "false"
-              },
-              {
-                "Name": "roleId",
-                "Type": "Edm.String",
-                "Nullable": "false",
-                "Unicode": "false"
-              },
-              {
-                "Name": "isElevated",
-                "Type": "Edm.Boolean"
-              },
-              {
-                "Name": "expirationDateTime",
-                "Type": "Edm.DateTimeOffset"
-              },
-              {
-                "Name": "resultMessage",
-                "Type": "Edm.String",
-                "Unicode": "false"
-              }
-            ],
-            "NavigationProperty": {
-              "Name": "roleInfo",
-              "Type": "microsoft.graph.privilegedRole",
-              "ContainsTarget": "true"
-            }
-          },
-          {
-            "Name": "privilegedRoleSummary",
-            "Key": {
-              "PropertyRef": {
-                "Name": "id"
-              }
-            },
-            "Property": [
-              {
-                "Name": "id",
-                "Type": "Edm.String",
-                "Nullable": "false",
-                "Unicode": "false"
-              },
-              {
-                "Name": "status",
-                "Type": "microsoft.graph.roleSummaryStatus"
-              },
-              {
-                "Name": "usersCount",
-                "Type": "Edm.Int32"
-              },
-              {
-                "Name": "managedCount",
-                "Type": "Edm.Int32"
-              },
-              {
-                "Name": "elevatedCount",
-                "Type": "Edm.Int32"
-              },
-              {
-                "Name": "mfaEnabled",
-                "Type": "Edm.Boolean"
-              }
-            ]
-          },
-          {
-            "Name": "privilegedOperationEvent",
-            "Key": {
-              "PropertyRef": {
-                "Name": "id"
-              }
-            },
-            "Property": [
-              {
-                "Name": "id",
-                "Type": "Edm.String",
-                "Nullable": "false",
-                "Unicode": "false"
-              },
-              {
-                "Name": "userId",
-                "Type": "Edm.String",
-                "Unicode": "false"
-              },
-              {
-                "Name": "userName",
-                "Type": "Edm.String",
-                "Unicode": "false"
-              },
-              {
-                "Name": "userMail",
-                "Type": "Edm.String",
-                "Unicode": "false"
-              },
-              {
-                "Name": "roleId",
-                "Type": "Edm.String",
-                "Unicode": "false"
-              },
-              {
-                "Name": "roleName",
-                "Type": "Edm.String",
-                "Unicode": "false"
-              },
-              {
-                "Name": "expirationDateTime",
-                "Type": "Edm.DateTimeOffset"
-              },
-              {
-                "Name": "creationDateTime",
-                "Type": "Edm.DateTimeOffset"
-              },
-              {
-                "Name": "requestorId",
-                "Type": "Edm.String",
-                "Unicode": "false"
-              },
-              {
-                "Name": "requestorName",
-                "Type": "Edm.String",
-                "Unicode": "false"
-              },
-              {
-                "Name": "tenantId",
-                "Type": "Edm.String",
-                "Unicode": "false"
-              },
-              {
-                "Name": "requestType",
-                "Type": "Edm.String",
-                "Unicode": "false"
-              },
-              {
-                "Name": "additionalInformation",
-                "Type": "Edm.String",
-                "Unicode": "false"
-              },
-              {
-                "Name": "referenceKey",
-                "Type": "Edm.String",
-                "Unicode": "false"
-              },
-              {
-                "Name": "referenceSystem",
+                "Name": "name",
                 "Type": "Edm.String",
                 "Unicode": "false"
               }
             ]
           },
           {
-            "Name": "privilegedSignupStatus",
-            "Key": {
-              "PropertyRef": {
-                "Name": "id"
-              }
-            },
+            "Name": "attributeDefinition",
             "Property": [
               {
-                "Name": "id",
-                "Type": "Edm.String",
-                "Nullable": "false",
-                "Unicode": "false"
-              },
-              {
-                "Name": "isRegistered",
-                "Type": "Edm.Boolean"
-              },
-              {
-                "Name": "status",
-                "Type": "microsoft.graph.setupStatus"
-              }
-            ]
-          },
-          {
-            "Name": "privilegedApproval",
-            "Key": {
-              "PropertyRef": {
-                "Name": "id"
-              }
-            },
-            "Property": [
-              {
-                "Name": "id",
-                "Type": "Edm.String",
-                "Nullable": "false",
-                "Unicode": "false"
-              },
-              {
-                "Name": "userId",
-                "Type": "Edm.String",
-                "Unicode": "false"
-              },
-              {
-                "Name": "roleId",
-                "Type": "Edm.String",
-                "Unicode": "false"
-              },
-              {
-                "Name": "approvalType",
-                "Type": "microsoft.graph.approvalType"
-              },
-              {
-                "Name": "approvalState",
-                "Type": "microsoft.graph.approvalState"
-              },
-              {
-                "Name": "approvalDurationInHours",
-                "Type": "Edm.Double"
-              },
-              {
-                "Name": "requestorReason",
-                "Type": "Edm.String",
-                "Unicode": "false"
-              },
-              {
-                "Name": "approverReason",
-                "Type": "Edm.String",
-                "Unicode": "false"
-              },
-              {
-                "Name": "startTime",
-                "Type": "Edm.DateTimeOffset"
-              },
-              {
-                "Name": "endTime",
-                "Type": "Edm.DateTimeOffset"
-              }
-            ],
-            "NavigationProperty": {
-              "Name": "roleInfo",
-              "Type": "microsoft.graph.privilegedRole",
-              "ContainsTarget": "true"
-            }
-          },
-          {
-            "Name": "tenantSetupInfo",
-            "Key": {
-              "PropertyRef": {
-                "Name": "id"
-              }
-            },
-            "Property": [
-              {
-                "Name": "id",
-                "Type": "Edm.String",
-                "Nullable": "false",
-                "Unicode": "false"
-              },
-              {
-                "Name": "userRolesActions",
-                "Type": "Edm.String",
-                "Unicode": "false"
-              },
-              {
-                "Name": "firstTimeSetup",
-                "Type": "Edm.Boolean"
-              },
-              {
-                "Name": "relevantRolesSettings",
-                "Type": "Collection(Edm.String)",
-                "Unicode": "false"
-              },
-              {
-                "Name": "skipSetup",
-                "Type": "Edm.Boolean"
-              },
-              {
-                "Name": "setupStatus",
-                "Type": "microsoft.graph.setupStatus"
-              }
-            ],
-            "NavigationProperty": {
-              "Name": "defaultRolesSettings",
-              "Type": "microsoft.graph.privilegedRoleSettings"
-            }
-          }
-        ],
-        "ComplexType": [
-          {
-            "Name": "roleSuccessStatistics",
-            "Property": [
-              {
-                "Name": "roleId",
-                "Type": "Edm.String",
-                "Unicode": "false"
-              },
-              {
-                "Name": "roleName",
-                "Type": "Edm.String",
-                "Unicode": "false"
-              },
-              {
-                "Name": "temporarySuccess",
-                "Type": "Edm.Int64"
-              },
-              {
-                "Name": "temporaryFail",
-                "Type": "Edm.Int64"
-              },
-              {
-                "Name": "permanentSuccess",
-                "Type": "Edm.Int64"
-              },
-              {
-                "Name": "permanentFail",
-                "Type": "Edm.Int64"
-              },
-              {
-                "Name": "removeSuccess",
-                "Type": "Edm.Int64"
-              },
-              {
-                "Name": "removeFail",
-                "Type": "Edm.Int64"
-              },
-              {
-                "Name": "unknownFail",
-                "Type": "Edm.Int64"
-              }
-            ]
-          },
-          {
-            "Name": "roleSuccessStatistics",
-            "Property": [
-              {
-                "Name": "roleId",
-                "Type": "Edm.String",
-                "Unicode": "false"
-              },
-              {
-                "Name": "roleName",
-                "Type": "Edm.String",
-                "Unicode": "false"
-              },
-              {
-                "Name": "temporarySuccess",
-                "Type": "Edm.Int64"
-              },
-              {
-                "Name": "temporaryFail",
-                "Type": "Edm.Int64"
-              },
-              {
-                "Name": "permanentSuccess",
-                "Type": "Edm.Int64"
-              },
-              {
-                "Name": "permanentFail",
-                "Type": "Edm.Int64"
-              },
-              {
-                "Name": "removeSuccess",
-                "Type": "Edm.Int64"
-              },
-              {
-                "Name": "removeFail",
-                "Type": "Edm.Int64"
-              },
-              {
-                "Name": "unknownFail",
-                "Type": "Edm.Int64"
-              }
-            ]
-          }
-        ],
-        "Action": [
-          {
-            "Name": "makePermanent",
-            "IsBound": "true",
-            "Parameter": [
-              {
-                "Name": "bindingParameter",
-                "Type": "microsoft.graph.privilegedRoleAssignment"
-              },
-              {
-                "Name": "reason",
-                "Type": "Edm.String",
-                "Unicode": "false"
-              },
-              {
-                "Name": "ticketNumber",
-                "Type": "Edm.String",
-                "Unicode": "false"
-              },
-              {
-                "Name": "ticketSystem",
-                "Type": "Edm.String",
-                "Unicode": "false"
-              }
-            ],
-            "ReturnType": {
-              "Type": "microsoft.graph.privilegedRoleAssignment"
-            }
-          },
-          {
-            "Name": "makeEligible",
-            "IsBound": "true",
-            "Parameter": {
-              "Name": "bindingParameter",
-              "Type": "microsoft.graph.privilegedRoleAssignment"
-            },
-            "ReturnType": {
-              "Type": "microsoft.graph.privilegedRoleAssignment"
-            }
-          },
-          {
-            "Name": "selfActivate",
-            "IsBound": "true",
-            "Parameter": [
-              {
-                "Name": "bindingParameter",
-                "Type": "microsoft.graph.privilegedRole"
-              },
-              {
-                "Name": "reason",
-                "Type": "Edm.String",
-                "Unicode": "false"
-              },
-              {
-                "Name": "duration",
-                "Type": "Edm.String",
-                "Unicode": "false"
-              },
-              {
-                "Name": "ticketNumber",
-                "Type": "Edm.String",
-                "Unicode": "false"
-              },
-              {
-                "Name": "ticketSystem",
-                "Type": "Edm.String",
-                "Unicode": "false"
-              }
-            ],
-            "ReturnType": {
-              "Type": "microsoft.graph.privilegedRoleAssignment"
-            }
-          },
-          {
-            "Name": "selfDeactivate",
-            "IsBound": "true",
-            "Parameter": {
-              "Name": "bindingParameter",
-              "Type": "microsoft.graph.privilegedRole"
-            },
-            "ReturnType": {
-              "Type": "microsoft.graph.privilegedRoleAssignment"
-            }
-          },
-          {
-            "Name": "signUp",
-            "IsBound": "true",
-            "Parameter": {
-              "Name": "bindingParameter",
-              "Type": "Collection(microsoft.graph.privilegedSignupStatus)"
-            },
-            "ReturnType": {
-              "Type": "microsoft.graph.privilegedSignupStatus"
-            }
-          },
-          {
-            "Name": "completeSetup",
-            "IsBound": "true",
-            "Parameter": [
-              {
-                "Name": "bindingParameter",
-                "Type": "Collection(microsoft.graph.privilegedSignupStatus)"
-              },
-              {
-                "Name": "tenantSetupInfo",
-                "Type": "microsoft.graph.tenantSetupInfo"
-              }
-            ],
-            "ReturnType": {
-              "Type": "Collection(microsoft.graph.roleSuccessStatistics)"
-            }
-          },
-          {
-            "Name": "requestApproval",
-            "IsBound": "true",
-            "Parameter": [
-              {
-                "Name": "bindingParameter",
-                "Type": "microsoft.graph.privilegedApproval"
-              },
-              {
-                "Name": "approvalDurationInHours",
-                "Type": "Edm.Double"
-              },
-              {
-                "Name": "requestorReason",
-                "Type": "Edm.String",
-                "Nullable": "false",
-                "Unicode": "false"
-              }
-            ],
-            "ReturnType": {
-              "Type": "microsoft.graph.privilegedApproval"
-            }
-          },
-          {
-            "Name": "updateApprovalState",
-            "IsBound": "true",
-            "Parameter": [
-              {
-                "Name": "bindingParameter",
-                "Type": "microsoft.graph.privilegedApproval"
-              },
-              {
-                "Name": "approvalDurationInHours",
-                "Type": "Edm.Double"
-              },
-              {
-                "Name": "approvalState",
-                "Type": "microsoft.graph.approvalState",
+                "Name": "anchor",
+                "Type": "Edm.Boolean",
                 "Nullable": "false"
               },
               {
-                "Name": "approverReason",
+                "Name": "caseExact",
+                "Type": "Edm.Boolean",
+                "Nullable": "false"
+              },
+              {
+                "Name": "defaultValue",
                 "Type": "Edm.String",
-                "Nullable": "false",
+                "Unicode": "false"
+              },
+              {
+                "Name": "metadata",
+                "Type": "Collection(microsoft.graph.metadataEntry)"
+              },
+              {
+                "Name": "multivalued",
+                "Type": "Edm.Boolean",
+                "Nullable": "false"
+              },
+              {
+                "Name": "mutability",
+                "Type": "microsoft.graph.mutability",
+                "Nullable": "false"
+              },
+              {
+                "Name": "name",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "required",
+                "Type": "Edm.Boolean",
+                "Nullable": "false"
+              },
+              {
+                "Name": "referencedObjects",
+                "Type": "Collection(microsoft.graph.referencedObject)"
+              },
+              {
+                "Name": "type",
+                "Type": "microsoft.graph.attributeType",
+                "Nullable": "false"
+              }
+            ]
+          },
+          {
+            "Name": "referencedObject",
+            "Property": [
+              {
+                "Name": "referencedObjectName",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "referencedProperty",
+                "Type": "Edm.String",
                 "Unicode": "false"
               }
-            ],
-            "ReturnType": {
-              "Type": "microsoft.graph.privilegedApproval"
+            ]
+          },
+          {
+            "Name": "synchronizationRule",
+            "Property": [
+              {
+                "Name": "editable",
+                "Type": "Edm.Boolean",
+                "Nullable": "false"
+              },
+              {
+                "Name": "id",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "metadata",
+                "Type": "Collection(microsoft.graph.stringKeyStringValuePair)"
+              },
+              {
+                "Name": "name",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "objectMappings",
+                "Type": "Collection(microsoft.graph.objectMapping)"
+              },
+              {
+                "Name": "priority",
+                "Type": "Edm.Int32",
+                "Nullable": "false"
+              },
+              {
+                "Name": "sourceDirectoryName",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "targetDirectoryName",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              }
+            ]
+          },
+          {
+            "Name": "stringKeyStringValuePair",
+            "Property": [
+              {
+                "Name": "key",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "value",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              }
+            ]
+          },
+          {
+            "Name": "objectMapping",
+            "Property": [
+              {
+                "Name": "attributeMappings",
+                "Type": "Collection(microsoft.graph.attributeMapping)"
+              },
+              {
+                "Name": "enabled",
+                "Type": "Edm.Boolean",
+                "Nullable": "false"
+              },
+              {
+                "Name": "flowTypes",
+                "Type": "microsoft.graph.objectFlowTypes",
+                "Nullable": "false"
+              },
+              {
+                "Name": "metadata",
+                "Type": "Collection(microsoft.graph.metadataEntry)"
+              },
+              {
+                "Name": "name",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "scope",
+                "Type": "microsoft.graph.filter"
+              },
+              {
+                "Name": "sourceObjectName",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "targetObjectName",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              }
+            ]
+          },
+          {
+            "Name": "attributeMapping",
+            "Property": [
+              {
+                "Name": "defaultValue",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "exportMissingReferences",
+                "Type": "Edm.Boolean",
+                "Nullable": "false"
+              },
+              {
+                "Name": "flowBehavior",
+                "Type": "microsoft.graph.attributeFlowBehavior",
+                "Nullable": "false"
+              },
+              {
+                "Name": "flowType",
+                "Type": "microsoft.graph.attributeFlowType",
+                "Nullable": "false"
+              },
+              {
+                "Name": "matchingPriority",
+                "Type": "Edm.Int32",
+                "Nullable": "false"
+              },
+              {
+                "Name": "source",
+                "Type": "microsoft.graph.attributeMappingSource"
+              },
+              {
+                "Name": "targetAttributeName",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              }
+            ]
+          },
+          {
+            "Name": "attributeMappingSource",
+            "Property": [
+              {
+                "Name": "expression",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "name",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "parameters",
+                "Type": "Collection(microsoft.graph.stringKeyAttributeMappingSourceValuePair)"
+              },
+              {
+                "Name": "type",
+                "Type": "microsoft.graph.attributeMappingSourceType",
+                "Nullable": "false"
+              }
+            ]
+          },
+          {
+            "Name": "stringKeyAttributeMappingSourceValuePair",
+            "Property": [
+              {
+                "Name": "key",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "value",
+                "Type": "microsoft.graph.attributeMappingSource"
+              }
+            ]
+          },
+          {
+            "Name": "filter",
+            "Property": [
+              {
+                "Name": "groups",
+                "Type": "Collection(microsoft.graph.filterGroup)"
+              },
+              {
+                "Name": "inputFilterGroups",
+                "Type": "Collection(microsoft.graph.filterGroup)"
+              },
+              {
+                "Name": "categoryFilterGroups",
+                "Type": "Collection(microsoft.graph.filterGroup)"
+              }
+            ]
+          },
+          {
+            "Name": "filterGroup",
+            "Property": [
+              {
+                "Name": "clauses",
+                "Type": "Collection(microsoft.graph.filterClause)"
+              },
+              {
+                "Name": "name",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              }
+            ]
+          },
+          {
+            "Name": "filterClause",
+            "Property": [
+              {
+                "Name": "operatorName",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "sourceOperandName",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "targetOperand",
+                "Type": "microsoft.graph.filterOperand"
+              }
+            ]
+          },
+          {
+            "Name": "filterOperand",
+            "Property": {
+              "Name": "values",
+              "Type": "Collection(Edm.String)",
+              "Unicode": "false"
+            }
+          },
+          {
+            "Name": "attributeMappingParameterSchema",
+            "Property": [
+              {
+                "Name": "allowMultipleOccurrences",
+                "Type": "Edm.Boolean",
+                "Nullable": "false"
+              },
+              {
+                "Name": "name",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "required",
+                "Type": "Edm.Boolean",
+                "Nullable": "false"
+              },
+              {
+                "Name": "type",
+                "Type": "microsoft.graph.attributeType",
+                "Nullable": "false"
+              }
+            ]
+          },
+          {
+            "Name": "expressionInputObject",
+            "Property": [
+              {
+                "Name": "definition",
+                "Type": "microsoft.graph.objectDefinition"
+              },
+              {
+                "Name": "properties",
+                "Type": "Collection(microsoft.graph.stringKeyObjectValuePair)"
+              }
+            ]
+          },
+          {
+            "Name": "stringKeyObjectValuePair",
+            "OpenType": "true",
+            "Property": {
+              "Name": "key",
+              "Type": "Edm.String",
+              "Unicode": "false"
+            }
+          },
+          {
+            "Name": "parseExpressionResponse",
+            "Property": [
+              {
+                "Name": "error",
+                "Type": "microsoft.graph.publicError"
+              },
+              {
+                "Name": "evaluationSucceeded",
+                "Type": "Edm.Boolean",
+                "Nullable": "false"
+              },
+              {
+                "Name": "evaluationResult",
+                "Type": "Collection(Edm.String)",
+                "Unicode": "false"
+              },
+              {
+                "Name": "parsedExpression",
+                "Type": "microsoft.graph.attributeMappingSource"
+              },
+              {
+                "Name": "parsingSucceeded",
+                "Type": "Edm.Boolean",
+                "Nullable": "false"
+              }
+            ]
+          },
+          {
+            "Name": "publicError",
+            "Property": [
+              {
+                "Name": "code",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "message",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "target",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "details",
+                "Type": "Collection(microsoft.graph.publicErrorDetail)"
+              },
+              {
+                "Name": "innerError",
+                "Type": "microsoft.graph.publicInnerError"
+              }
+            ]
+          },
+          {
+            "Name": "publicErrorDetail",
+            "Property": [
+              {
+                "Name": "code",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "message",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "target",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              }
+            ]
+          },
+          {
+            "Name": "publicInnerError",
+            "OpenType": "true",
+            "Property": [
+              {
+                "Name": "code",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "details",
+                "Type": "Collection(microsoft.graph.publicErrorDetail)"
+              },
+              {
+                "Name": "message",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "target",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              }
+            ]
+          },
+          {
+            "Name": "publicErrorResponse",
+            "Property": {
+              "Name": "error",
+              "Type": "microsoft.graph.publicError"
             }
           }
         ],
         "Function": [
           {
-            "Name": "my",
+            "Name": "Ping",
             "IsBound": "true",
             "Parameter": {
               "Name": "bindingParameter",
-              "Type": "Collection(microsoft.graph.privilegedRoleAssignment)"
+              "Type": "microsoft.graph.synchronization"
             },
             "ReturnType": {
-              "Type": "Collection(microsoft.graph.privilegedRoleAssignment)"
+              "Type": "Edm.String",
+              "Unicode": "false"
             }
           },
           {
-            "Name": "isSignedUp",
+            "Name": "functions",
             "IsBound": "true",
             "Parameter": {
               "Name": "bindingParameter",
-              "Type": "Collection(microsoft.graph.privilegedSignupStatus)"
+              "Type": "microsoft.graph.synchronizationSchema"
             },
             "ReturnType": {
-              "Type": "Edm.Boolean",
-              "Nullable": "false"
+              "Type": "Collection(microsoft.graph.attributeMappingFunctionSchema)"
             }
           },
           {
-            "Name": "canSignUp",
+            "Name": "filterOperators",
             "IsBound": "true",
             "Parameter": {
               "Name": "bindingParameter",
-              "Type": "Collection(microsoft.graph.privilegedSignupStatus)"
+              "Type": "microsoft.graph.synchronizationSchema"
             },
             "ReturnType": {
-              "Type": "Edm.Boolean",
-              "Nullable": "false"
+              "Type": "Collection(microsoft.graph.filterOperatorSchema)"
+            }
+          }
+        ],
+        "Action": [
+          {
+            "Name": "pause",
+            "IsBound": "true",
+            "Parameter": {
+              "Name": "bindingParameter",
+              "Type": "microsoft.graph.synchronizationJob"
             }
           },
           {
-            "Name": "approvalRequests",
+            "Name": "start",
             "IsBound": "true",
             "Parameter": {
               "Name": "bindingParameter",
-              "Type": "Collection(microsoft.graph.privilegedApproval)"
-            },
-            "ReturnType": {
-              "Type": "microsoft.graph.privilegedApproval"
+              "Type": "microsoft.graph.synchronizationJob"
             }
           },
           {
-            "Name": "myRequests",
+            "Name": "stop",
             "IsBound": "true",
             "Parameter": {
               "Name": "bindingParameter",
-              "Type": "Collection(microsoft.graph.privilegedApproval)"
-            },
-            "ReturnType": {
-              "Type": "microsoft.graph.privilegedApproval"
+              "Type": "microsoft.graph.synchronizationJob"
             }
           },
           {
-            "Name": "myRequests",
+            "Name": "restart",
             "IsBound": "true",
-            "Parameter": {
-              "Name": "bindingParameter",
-              "Type": "microsoft.graph.privilegedApproval"
-            },
+            "Parameter": [
+              {
+                "Name": "bindingParameter",
+                "Type": "microsoft.graph.synchronizationJob"
+              },
+              {
+                "Name": "criteria",
+                "Type": "microsoft.graph.synchronizationJobRestartCriteria"
+              }
+            ]
+          },
+          {
+            "Name": "validateCredentials",
+            "IsBound": "true",
+            "Parameter": [
+              {
+                "Name": "bindingParameter",
+                "Type": "microsoft.graph.synchronizationJob"
+              },
+              {
+                "Name": "applicationIdentifier",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "templateId",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "useSavedCredentials",
+                "Type": "Edm.Boolean"
+              },
+              {
+                "Name": "credentials",
+                "Type": "Collection(microsoft.graph.synchronizationSecretKeyStringValuePair)"
+              }
+            ]
+          },
+          {
+            "Name": "validateCredentials",
+            "IsBound": "true",
+            "Parameter": [
+              {
+                "Name": "bindingParameter",
+                "Type": "Collection(microsoft.graph.synchronizationJob)"
+              },
+              {
+                "Name": "applicationIdentifier",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "templateId",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "useSavedCredentials",
+                "Type": "Edm.Boolean"
+              },
+              {
+                "Name": "credentials",
+                "Type": "Collection(microsoft.graph.synchronizationSecretKeyStringValuePair)"
+              }
+            ]
+          },
+          {
+            "Name": "parseExpression",
+            "IsBound": "true",
+            "Parameter": [
+              {
+                "Name": "bindingParameter",
+                "Type": "microsoft.graph.synchronizationSchema"
+              },
+              {
+                "Name": "expression",
+                "Type": "Edm.String",
+                "Unicode": "false"
+              },
+              {
+                "Name": "testInputObject",
+                "Type": "microsoft.graph.expressionInputObject"
+              },
+              {
+                "Name": "targetAttributeDefinition",
+                "Type": "microsoft.graph.attributeDefinition"
+              }
+            ],
             "ReturnType": {
-              "Type": "microsoft.graph.privilegedApproval"
+              "Type": "microsoft.graph.parseExpressionResponse"
             }
           }
         ],
@@ -807,28 +1603,20 @@
           "Name": "GraphService",
           "EntitySet": [
             {
-              "Name": "privilegedRoles",
-              "EntityType": "microsoft.graph.privilegedRole",
-              "NavigationPropertyBinding": {
-                "Path": "assignments",
-                "Target": "privilegedRoleAssignments"
-              }
+              "Name": "servicePrincipals",
+              "EntityType": "microsoft.graph.servicePrincipal"
             },
             {
-              "Name": "privilegedRoleAssignments",
-              "EntityType": "microsoft.graph.privilegedRoleAssignment"
+              "Name": "applications",
+              "EntityType": "microsoft.graph.application"
             },
             {
-              "Name": "privilegedOperationEvents",
-              "EntityType": "microsoft.graph.privilegedOperationEvent"
+              "Name": "functions",
+              "EntityType": "microsoft.graph.attributeMappingFunctionSchema"
             },
             {
-              "Name": "privilegedSignupStatus",
-              "EntityType": "microsoft.graph.privilegedSignupStatus"
-            },
-            {
-              "Name": "privilegedApproval",
-              "EntityType": "microsoft.graph.privilegedApproval"
+              "Name": "filterOperators",
+              "EntityType": "microsoft.graph.filterOperatorSchema"
             }
           ]
         }

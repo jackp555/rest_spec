@@ -1,5 +1,106 @@
 {
-  "synchronizationjob": [
+  "name": "synchronizationJob",
+  "description": "",
+  "collectionOf": null,
+  "isComplexType": false,
+  "isEntitySet": false,
+  "isOpenType": false,
+  "allowPatch": true,
+  "allowUpsert": true,
+  "allowPatchCreate": true,
+  "allowDelete": true,
+  "isReferenceable": true,
+  "isExpandable": true,
+  "isFilterable": true,
+  "isCountable": true,
+  "isSelectable": true,
+  "isSkipSupported": true,
+  "isTopSupported": true,
+  "info": null,
+  "propertyNotes": "",
+  "relationshipNotes": "",
+  "methodNotes": "",
+  "listDescription": "",
+  "createDescription": "",
+  "updateDescription": "",
+  "deleteDescription": "",
+  "restPath": {
+    "/servicePrincipals/<id>/synchronization/jobs/<id>": true,
+    "/applications/<id>/synchronization/jobs/<id>": true
+  },
+  "properties": [
+    {
+      "name": "id",
+      "description": "",
+      "isKey": true,
+      "dataType": "String",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": false,
+      "isUnicode": false
+    },
+    {
+      "name": "templateId",
+      "description": "",
+      "isKey": false,
+      "dataType": "String",
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": false
+    },
+    {
+      "name": "schedule",
+      "description": "",
+      "isKey": false,
+      "dataType": "synchronizationSchedule",
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "status",
+      "description": "",
+      "isKey": false,
+      "dataType": "synchronizationStatus",
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "schema",
+      "description": "",
+      "isKey": false,
+      "dataType": "synchronizationSchema",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": true,
+      "isUnicode": null
+    }
+  ],
+  "methods": [
     {
       "name": "pause",
       "displayName": "",
@@ -205,119 +306,6 @@
           "isNullable": null,
           "isUnicode": null
         }
-      ]
-    }
-  ],
-  "synchronizationschema": [
-    {
-      "name": "parseExpression",
-      "displayName": "",
-      "description": "",
-      "prerequisites": "",
-      "returnType": "parseExpressionResponse",
-      "isReturnNullable": null,
-      "isReturnTypeCollection": false,
-      "httpSuccessCode": "200",
-      "isFunction": false,
-      "scopes": [
-
-      ],
-      "errorCodes": [
-
-      ],
-      "parameters": [
-        {
-          "name": "expression",
-          "description": "",
-          "dataType": "String",
-          "isCollection": false,
-          "isRequired": true,
-          "enumName": null,
-          "isNullable": null,
-          "isUnicode": false
-        },
-        {
-          "name": "testInputObject",
-          "description": "",
-          "dataType": "expressionInputObject",
-          "isCollection": false,
-          "isRequired": true,
-          "enumName": null,
-          "isNullable": null,
-          "isUnicode": null
-        },
-        {
-          "name": "targetAttributeDefinition",
-          "description": "",
-          "dataType": "attributeDefinition",
-          "isCollection": false,
-          "isRequired": true,
-          "enumName": null,
-          "isNullable": null,
-          "isUnicode": null
-        }
-      ]
-    },
-    {
-      "name": "functions",
-      "displayName": "",
-      "description": "",
-      "prerequisites": "",
-      "returnType": "attributeMappingFunctionSchema",
-      "isReturnNullable": null,
-      "isReturnTypeCollection": true,
-      "httpSuccessCode": "200",
-      "isFunction": true,
-      "scopes": [
-
-      ],
-      "errorCodes": [
-
-      ],
-      "parameters": [
-
-      ]
-    },
-    {
-      "name": "filterOperators",
-      "displayName": "",
-      "description": "",
-      "prerequisites": "",
-      "returnType": "filterOperatorSchema",
-      "isReturnNullable": null,
-      "isReturnTypeCollection": true,
-      "httpSuccessCode": "200",
-      "isFunction": true,
-      "scopes": [
-
-      ],
-      "errorCodes": [
-
-      ],
-      "parameters": [
-
-      ]
-    }
-  ],
-  "synchronization": [
-    {
-      "name": "Ping",
-      "displayName": "",
-      "description": "",
-      "prerequisites": "",
-      "returnType": "String",
-      "isReturnNullable": null,
-      "isReturnTypeCollection": false,
-      "httpSuccessCode": "200",
-      "isFunction": true,
-      "scopes": [
-
-      ],
-      "errorCodes": [
-
-      ],
-      "parameters": [
-
       ]
     }
   ]

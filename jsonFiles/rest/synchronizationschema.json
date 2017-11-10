@@ -1,0 +1,182 @@
+{
+  "name": "synchronizationSchema",
+  "description": "",
+  "collectionOf": null,
+  "isComplexType": false,
+  "isEntitySet": false,
+  "isOpenType": false,
+  "allowPatch": true,
+  "allowUpsert": true,
+  "allowPatchCreate": true,
+  "allowDelete": true,
+  "isReferenceable": true,
+  "isExpandable": true,
+  "isFilterable": true,
+  "isCountable": true,
+  "isSelectable": true,
+  "isSkipSupported": true,
+  "isTopSupported": true,
+  "info": null,
+  "propertyNotes": "",
+  "relationshipNotes": "",
+  "methodNotes": "",
+  "listDescription": "",
+  "createDescription": "",
+  "updateDescription": "",
+  "deleteDescription": "",
+  "restPath": {
+    "/servicePrincipals/<id>/synchronization/jobs/<id>/schema": true,
+    "/servicePrincipals/<id>/synchronization/templates/<id>/schema": true,
+    "/applications/<id>/synchronization/jobs/<id>/schema": true,
+    "/applications/<id>/synchronization/templates/<id>/schema": true
+  },
+  "properties": [
+    {
+      "name": "provisioningTaskIdentifier",
+      "description": "",
+      "isKey": true,
+      "dataType": "String",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": false,
+      "isUnicode": false
+    },
+    {
+      "name": "directories",
+      "description": "",
+      "isKey": false,
+      "dataType": "directoryDefinition",
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": true,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "synchronizationRules",
+      "description": "",
+      "isKey": false,
+      "dataType": "synchronizationRule",
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": true,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "version",
+      "description": "",
+      "isKey": false,
+      "dataType": "String",
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "parseExpression",
+      "displayName": "",
+      "description": "",
+      "prerequisites": "",
+      "returnType": "parseExpressionResponse",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": "200",
+      "isFunction": false,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+        {
+          "name": "expression",
+          "description": "",
+          "dataType": "String",
+          "isCollection": false,
+          "isRequired": true,
+          "enumName": null,
+          "isNullable": null,
+          "isUnicode": false
+        },
+        {
+          "name": "testInputObject",
+          "description": "",
+          "dataType": "expressionInputObject",
+          "isCollection": false,
+          "isRequired": true,
+          "enumName": null,
+          "isNullable": null,
+          "isUnicode": null
+        },
+        {
+          "name": "targetAttributeDefinition",
+          "description": "",
+          "dataType": "attributeDefinition",
+          "isCollection": false,
+          "isRequired": true,
+          "enumName": null,
+          "isNullable": null,
+          "isUnicode": null
+        }
+      ]
+    },
+    {
+      "name": "functions",
+      "displayName": "",
+      "description": "",
+      "prerequisites": "",
+      "returnType": "attributeMappingFunctionSchema",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": true,
+      "httpSuccessCode": "200",
+      "isFunction": true,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+
+      ]
+    },
+    {
+      "name": "filterOperators",
+      "displayName": "",
+      "description": "",
+      "prerequisites": "",
+      "returnType": "filterOperatorSchema",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": true,
+      "httpSuccessCode": "200",
+      "isFunction": true,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+
+      ]
+    }
+  ]
+}

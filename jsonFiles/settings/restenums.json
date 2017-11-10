@@ -1,84 +1,448 @@
 {
-  "approvalType": {
+  "attributeFlowType": {
     "isExclusive": true,
     "options": {
-      "assignment": {
+      "Always": {
         "value": "0",
         "description": ""
       },
-      "activation": {
+      "ObjectAddOnly": {
+        "value": "1",
+        "description": ""
+      },
+      "MultiValueAddOnly": {
+        "value": "2",
+        "description": ""
+      }
+    }
+  },
+  "attributeFlowBehavior": {
+    "isExclusive": true,
+    "options": {
+      "FlowWhenChanged": {
+        "value": "0",
+        "description": ""
+      },
+      "FlowAlways": {
         "value": "1",
         "description": ""
       }
     }
   },
-  "approvalState": {
+  "attributeMappingSourceType": {
     "isExclusive": true,
     "options": {
-      "pending": {
+      "Attribute": {
         "value": "0",
         "description": ""
       },
-      "approved": {
+      "Constant": {
         "value": "1",
         "description": ""
       },
-      "denied": {
+      "Function": {
+        "value": "2",
+        "description": ""
+      }
+    }
+  },
+  "entryExportStatus": {
+    "isExclusive": true,
+    "options": {
+      "Noop": {
+        "value": "0",
+        "description": ""
+      },
+      "Success": {
+        "value": "1",
+        "description": ""
+      },
+      "RetryableError": {
         "value": "2",
         "description": ""
       },
-      "aborted": {
+      "PermanentError": {
         "value": "3",
+        "description": ""
+      },
+      "Error": {
+        "value": "4",
         "description": ""
       }
     }
   },
-  "roleSummaryStatus": {
+  "attributeType": {
     "isExclusive": true,
     "options": {
-      "ok": {
-        "value": "0",
-        "description": ""
-      },
-      "bad": {
-        "value": "1",
-        "description": ""
-      }
-    }
-  },
-  "setupStatus": {
-    "isExclusive": true,
-    "options": {
-      "unknown": {
-        "value": "0",
-        "description": ""
-      },
-      "notRegisteredYet": {
-        "value": "1",
-        "description": ""
-      },
-      "registeredSetupNotStarted": {
-        "value": "2",
-        "description": ""
-      },
-      "registeredSetupInProgress": {
-        "value": "3",
-        "description": ""
-      },
-      "registrationAndSetupCompleted": {
+      "Boolean": {
         "value": "4",
         "description": ""
       },
-      "registrationFailed": {
+      "Binary": {
+        "value": "3",
+        "description": ""
+      },
+      "Reference": {
+        "value": "2",
+        "description": ""
+      },
+      "Integer": {
+        "value": "1",
+        "description": ""
+      },
+      "String": {
+        "value": "0",
+        "description": ""
+      }
+    }
+  },
+  "entrySyncOperation": {
+    "isExclusive": true,
+    "options": {
+      "None": {
+        "value": "0",
+        "description": ""
+      },
+      "Add": {
+        "value": "1",
+        "description": ""
+      },
+      "Delete": {
+        "value": "2",
+        "description": ""
+      },
+      "Update": {
+        "value": "3",
+        "description": ""
+      }
+    }
+  },
+  "mutability": {
+    "isExclusive": true,
+    "options": {
+      "ReadWrite": {
+        "value": "0",
+        "description": ""
+      },
+      "ReadOnly": {
+        "value": "1",
+        "description": ""
+      },
+      "Immutable": {
+        "value": "2",
+        "description": ""
+      },
+      "WriteOnly": {
+        "value": "3",
+        "description": ""
+      }
+    }
+  },
+  "objectFlowTypes": {
+    "isExclusive": false,
+    "options": {
+      "None": {
+        "value": "0",
+        "description": ""
+      },
+      "Add": {
+        "value": "1",
+        "description": ""
+      },
+      "Update": {
+        "value": "2",
+        "description": ""
+      },
+      "Delete": {
+        "value": "4",
+        "description": ""
+      }
+    }
+  },
+  "synchronizationSecret": {
+    "isExclusive": true,
+    "options": {
+      "None": {
+        "value": "0",
+        "description": ""
+      },
+      "UserName": {
+        "value": "1",
+        "description": ""
+      },
+      "Password": {
+        "value": "2",
+        "description": ""
+      },
+      "SecretToken": {
+        "value": "3",
+        "description": ""
+      },
+      "AppKey": {
+        "value": "4",
+        "description": ""
+      },
+      "BaseAddress": {
         "value": "5",
         "description": ""
       },
-      "registrationTimedOut": {
+      "ClientIdentifier": {
         "value": "6",
         "description": ""
       },
-      "disabled": {
+      "ClientSecret": {
         "value": "7",
+        "description": ""
+      },
+      "SingleSignOnType": {
+        "value": "11",
+        "description": ""
+      },
+      "Sandbox": {
+        "value": "12",
+        "description": ""
+      },
+      "Url": {
+        "value": "13",
+        "description": ""
+      },
+      "Domain": {
+        "value": "14",
+        "description": ""
+      },
+      "ConsumerKey": {
+        "value": "15",
+        "description": ""
+      },
+      "ConsumerSecret": {
+        "value": "16",
+        "description": ""
+      },
+      "TokenKey": {
+        "value": "17",
+        "description": ""
+      },
+      "TokenExpiration": {
+        "value": "18",
+        "description": ""
+      },
+      "Oauth2AccessToken": {
+        "value": "19",
+        "description": ""
+      },
+      "Oauth2AccessTokenCreationTime": {
+        "value": "20",
+        "description": ""
+      },
+      "Oauth2RefreshToken": {
+        "value": "21",
+        "description": ""
+      },
+      "SyncAll": {
+        "value": "22",
+        "description": ""
+      },
+      "InstanceName": {
+        "value": "24",
+        "description": ""
+      },
+      "Oauth2ClientId": {
+        "value": "27",
+        "description": ""
+      },
+      "Oauth2ClientSecret": {
+        "value": "28",
+        "description": ""
+      },
+      "CompanyId": {
+        "value": "29",
+        "description": ""
+      },
+      "UpdateKeyOnSoftDelete": {
+        "value": "30",
+        "description": ""
+      },
+      "SynchronizationSchedule": {
+        "value": "33",
+        "description": ""
+      },
+      "SystemOfRecord": {
+        "value": "34",
+        "description": ""
+      },
+      "SandboxName": {
+        "value": "35",
+        "description": ""
+      },
+      "EnforceDomain": {
+        "value": "36",
+        "description": ""
+      },
+      "SyncNotificationSettings": {
+        "value": "37",
+        "description": ""
+      },
+      "Server": {
+        "value": "70",
+        "description": ""
+      },
+      "PerformInboundEntitlementGrants": {
+        "value": "100",
+        "description": ""
+      },
+      "HardDeletesEnabled": {
+        "value": "101",
+        "description": ""
+      },
+      "SyncAgentCompatibilityKey": {
+        "value": "102",
+        "description": ""
+      },
+      "SyncAgentADContainer": {
+        "value": "103",
+        "description": ""
+      },
+      "ValidateDomain": {
+        "value": "206",
+        "description": ""
+      },
+      "TestReferences": {
+        "value": "207",
+        "description": ""
+      }
+    }
+  },
+  "synchronizationStatusCode": {
+    "isExclusive": true,
+    "options": {
+      "NotConfigured": {
+        "value": "0",
+        "description": ""
+      },
+      "NotRun": {
+        "value": "1",
+        "description": ""
+      },
+      "Active": {
+        "value": "2",
+        "description": ""
+      },
+      "Paused": {
+        "value": "3",
+        "description": ""
+      },
+      "Quarantine": {
+        "value": "4",
+        "description": ""
+      }
+    }
+  },
+  "synchronizationTaskExecutionResult": {
+    "isExclusive": true,
+    "options": {
+      "Succeeded": {
+        "value": "0",
+        "description": ""
+      },
+      "Failed": {
+        "value": "1",
+        "description": ""
+      },
+      "EntryLevelErrors": {
+        "value": "2",
+        "description": ""
+      }
+    }
+  },
+  "synchronizationJobRestartScope": {
+    "isExclusive": false,
+    "options": {
+      "Full": {
+        "value": "15",
+        "description": ""
+      },
+      "QuarantineState": {
+        "value": "8",
+        "description": ""
+      },
+      "Watermark": {
+        "value": "4",
+        "description": ""
+      },
+      "Escrows": {
+        "value": "2",
+        "description": ""
+      },
+      "ConnectorDataStore": {
+        "value": "1",
+        "description": ""
+      },
+      "None": {
+        "value": "0",
+        "description": ""
+      }
+    }
+  },
+  "quarantineReason": {
+    "isExclusive": true,
+    "options": {
+      "EncounteredBaseEscrowThreshold": {
+        "value": "0",
+        "description": ""
+      },
+      "EncounteredTotalEscrowThreshold": {
+        "value": "1",
+        "description": ""
+      },
+      "EncounteredEscrowProportionThreshold": {
+        "value": "2",
+        "description": ""
+      },
+      "EncounteredQuarantineException": {
+        "value": "4",
+        "description": ""
+      },
+      "Unknown": {
+        "value": "8",
+        "description": ""
+      }
+    }
+  },
+  "synchronizationScheduleState": {
+    "isExclusive": true,
+    "options": {
+      "Active": {
+        "value": "0",
+        "description": ""
+      },
+      "Disabled": {
+        "value": "1",
+        "description": ""
+      }
+    }
+  },
+  "scopeOperatorMultiValuedComparisonType": {
+    "isExclusive": true,
+    "options": {
+      "All": {
+        "value": "0",
+        "description": ""
+      },
+      "Any": {
+        "value": "1",
+        "description": ""
+      }
+    }
+  },
+  "scopeOperatorType": {
+    "isExclusive": true,
+    "options": {
+      "Binary": {
+        "value": "0",
+        "description": ""
+      },
+      "Unary": {
+        "value": "1",
         "description": ""
       }
     }
