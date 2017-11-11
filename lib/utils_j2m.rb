@@ -22,6 +22,9 @@ module SpecMaker
 	BACKTOPROPERTY = NEWLINE + '[Back](#properties)'
 	PIPE = '|'
 	TWONEWLINES = "\n\n"
+    
+    @complexDataTypeStack = []
+
 
 	TABLE_2ND_LINE =  "|:---------------|:--------|:----------|" + NEWLINE
 	TABLE_2ND_LINE_2COL =  "|:---------------|:----------|" + NEWLINE
@@ -234,20 +237,25 @@ module SpecMaker
 	def self.dump_complex_type(ct=nil)
 		model={}
 		fullpath = JSON_SOURCE_FOLDER + '/' + ct.downcase + '.json'
-		if File.file?(fullpath)
+		if File.file?(fullpath) and !@complexDataTypeStack.include? ct.downcase
 			object = JSON.parse(File.read(fullpath, :encoding => 'UTF-8'), {:symbolize_names => true})
 			object[:properties].each do |item|
 				if item[:name].downcase.start_with?('extension')
 					next
 					#model[item[:name]] = {}
 				else
+                    #puts "Pushing : #{ct.downcase}"
+                    @complexDataTypeStack.push(ct.downcase)
 					model[item[:name]] = assign_value2(item[:dataType], item[:name], item[:isRelationship])
 					if item[:isCollection]
 						model[item[:name]] = [model[item[:name]]]
 					end
+                    #print "Pop : #{ct.downcase}"
+                    @complexDataTypeStack.pop
 				end
 				# end
 			end
+            
 		end
 		
 		return model

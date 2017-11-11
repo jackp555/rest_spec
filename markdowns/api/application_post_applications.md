@@ -1,6 +1,6 @@
-# Create synchronizationTemplate
+# Create application
 
-Use this API to create a new synchronizationTemplate.
+Use this API to create a new application.
 ## Permissions
 One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](../../../concepts/permissions_reference.md).
 
@@ -13,8 +13,7 @@ One of the following permissions is required to call this API. To learn more, in
 ## HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-POST /applications/<id>/synchronization/templates
-POST /servicePrincipals/<id>/synchronization/templates
+POST /applications
 
 ```
 ## Request headers
@@ -23,52 +22,42 @@ POST /servicePrincipals/<id>/synchronization/templates
 | Authorization  | Bearer {code}|
 
 ## Request body
-In the request body, supply a JSON representation of [synchronizationTemplate](../resources/synchronizationtemplate.md) object.
+In the request body, supply a JSON representation of [application](../resources/application.md) object.
 
 
 ## Response
-If successful, this method returns `201, Created` response code and [synchronizationTemplate](../resources/synchronizationtemplate.md) object in the response body.
+If successful, this method returns `201, Created` response code and [application](../resources/application.md) object in the response body.
 
 ## Example
 ##### Request
 Here is an example of the request.
 <!-- {
   "blockType": "request",
-  "name": "create_synchronizationtemplate_from_synchronization"
+  "name": "create_application_from_applications"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/applications/<id>/synchronization/templates
+POST https://graph.microsoft.com/beta/applications
 Content-type: application/json
-Content-length: 161
+Content-length: 3
 
 {
-  "applicationId": "1547f11c-7f96-4029-8b07-2a486d959c1f",
-  "default": true,
-  "description": "description-value",
-  "discoverable": true,
-  "factoryTag": "factoryTag-value"
 }
 ```
-In the request body, supply a JSON representation of [synchronizationTemplate](../resources/synchronizationtemplate.md) object.
+In the request body, supply a JSON representation of [application](../resources/application.md) object.
 ##### Response
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
   "truncated": true,
-  "@odata.type": "microsoft.graph.synchronizationTemplate"
+  "@odata.type": "microsoft.graph.application"
 } -->
 ```http
 HTTP/1.1 201 Created
 Content-type: application/json
-Content-length: 181
+Content-length: 22
 
 {
-  "id": "id-value",
-  "applicationId": "1547f11c-7f96-4029-8b07-2a486d959c1f",
-  "default": true,
-  "description": "description-value",
-  "discoverable": true,
-  "factoryTag": "factoryTag-value"
+  "id": "id-value"
 }
 ```
 
@@ -76,7 +65,7 @@ Content-length: 181
 2015-10-25 14:57:30 UTC -->
 <!-- {
   "type": "#page.annotation",
-  "description": "Create synchronizationTemplate",
+  "description": "Create application",
   "keywords": "",
   "section": "documentation",
   "tocPath": ""

@@ -1,6 +1,6 @@
-# Create synchronizationTemplate
+# Create attributeMappingFunctionSchema
 
-Use this API to create a new synchronizationTemplate.
+Use this API to create a new attributeMappingFunctionSchema.
 ## Permissions
 One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](../../../concepts/permissions_reference.md).
 
@@ -13,8 +13,7 @@ One of the following permissions is required to call this API. To learn more, in
 ## HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-POST /applications/<id>/synchronization/templates
-POST /servicePrincipals/<id>/synchronization/templates
+POST /functions
 
 ```
 ## Request headers
@@ -23,52 +22,58 @@ POST /servicePrincipals/<id>/synchronization/templates
 | Authorization  | Bearer {code}|
 
 ## Request body
-In the request body, supply a JSON representation of [synchronizationTemplate](../resources/synchronizationtemplate.md) object.
+In the request body, supply a JSON representation of [attributeMappingFunctionSchema](../resources/attributemappingfunctionschema.md) object.
 
 
 ## Response
-If successful, this method returns `201, Created` response code and [synchronizationTemplate](../resources/synchronizationtemplate.md) object in the response body.
+If successful, this method returns `201, Created` response code and [attributeMappingFunctionSchema](../resources/attributemappingfunctionschema.md) object in the response body.
 
 ## Example
 ##### Request
 Here is an example of the request.
 <!-- {
   "blockType": "request",
-  "name": "create_synchronizationtemplate_from_synchronization"
+  "name": "create_attributemappingfunctionschema_from_functions"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/applications/<id>/synchronization/templates
+POST https://graph.microsoft.com/beta/functions
 Content-type: application/json
-Content-length: 161
+Content-length: 156
 
 {
-  "applicationId": "1547f11c-7f96-4029-8b07-2a486d959c1f",
-  "default": true,
-  "description": "description-value",
-  "discoverable": true,
-  "factoryTag": "factoryTag-value"
+  "parameters": [
+    {
+      "allowMultipleOccurrences": true,
+      "name": "name-value",
+      "required": true,
+      "type": "type-value"
+    }
+  ]
 }
 ```
-In the request body, supply a JSON representation of [synchronizationTemplate](../resources/synchronizationtemplate.md) object.
+In the request body, supply a JSON representation of [attributeMappingFunctionSchema](../resources/attributemappingfunctionschema.md) object.
 ##### Response
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
   "truncated": true,
-  "@odata.type": "microsoft.graph.synchronizationTemplate"
+  "@odata.type": "microsoft.graph.attributeMappingFunctionSchema"
 } -->
 ```http
 HTTP/1.1 201 Created
 Content-type: application/json
-Content-length: 181
+Content-length: 180
 
 {
-  "id": "id-value",
-  "applicationId": "1547f11c-7f96-4029-8b07-2a486d959c1f",
-  "default": true,
-  "description": "description-value",
-  "discoverable": true,
-  "factoryTag": "factoryTag-value"
+  "name": "name-value",
+  "parameters": [
+    {
+      "allowMultipleOccurrences": true,
+      "name": "name-value",
+      "required": true,
+      "type": "type-value"
+    }
+  ]
 }
 ```
 
@@ -76,7 +81,7 @@ Content-length: 181
 2015-10-25 14:57:30 UTC -->
 <!-- {
   "type": "#page.annotation",
-  "description": "Create synchronizationTemplate",
+  "description": "Create attributeMappingFunctionSchema",
   "keywords": "",
   "section": "documentation",
   "tocPath": ""

@@ -1,6 +1,6 @@
-# Create synchronizationTemplate
+# Get synchronizationTemplate
 
-Use this API to create a new synchronizationTemplate.
+Retrieve the properties and relationships of synchronizationtemplate object.
 ## Permissions
 One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](../../../concepts/permissions_reference.md).
 
@@ -13,43 +13,31 @@ One of the following permissions is required to call this API. To learn more, in
 ## HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-POST /applications/<id>/synchronization/templates
-POST /servicePrincipals/<id>/synchronization/templates
-
+GET /applications/<id>/synchronization/templates/<id>
+GET /servicePrincipals/<id>/synchronization/templates/<id>
 ```
+## Optional query parameters
+This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
+
 ## Request headers
-| Name       | Description|
-|:---------------|:----------|
+| Name      |Description|
+|:----------|:----------|
 | Authorization  | Bearer {code}|
 
 ## Request body
-In the request body, supply a JSON representation of [synchronizationTemplate](../resources/synchronizationtemplate.md) object.
-
-
+Do not supply a request body for this method.
 ## Response
-If successful, this method returns `201, Created` response code and [synchronizationTemplate](../resources/synchronizationtemplate.md) object in the response body.
-
+If successful, this method returns a `200 OK` response code and [synchronizationTemplate](../resources/synchronizationtemplate.md) object in the response body.
 ## Example
 ##### Request
 Here is an example of the request.
 <!-- {
   "blockType": "request",
-  "name": "create_synchronizationtemplate_from_synchronization"
+  "name": "get_synchronizationtemplate"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/applications/<id>/synchronization/templates
-Content-type: application/json
-Content-length: 161
-
-{
-  "applicationId": "1547f11c-7f96-4029-8b07-2a486d959c1f",
-  "default": true,
-  "description": "description-value",
-  "discoverable": true,
-  "factoryTag": "factoryTag-value"
-}
+GET https://graph.microsoft.com/beta/applications/<id>/synchronization/templates/<id>
 ```
-In the request body, supply a JSON representation of [synchronizationTemplate](../resources/synchronizationtemplate.md) object.
 ##### Response
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
@@ -58,13 +46,13 @@ Here is an example of the response. Note: The response object shown here may be 
   "@odata.type": "microsoft.graph.synchronizationTemplate"
 } -->
 ```http
-HTTP/1.1 201 Created
+HTTP/1.1 200 OK
 Content-type: application/json
 Content-length: 181
 
 {
   "id": "id-value",
-  "applicationId": "1547f11c-7f96-4029-8b07-2a486d959c1f",
+  "applicationId": "applicationId-value",
   "default": true,
   "description": "description-value",
   "discoverable": true,
@@ -76,7 +64,7 @@ Content-length: 181
 2015-10-25 14:57:30 UTC -->
 <!-- {
   "type": "#page.annotation",
-  "description": "Create synchronizationTemplate",
+  "description": "Get synchronizationTemplate",
   "keywords": "",
   "section": "documentation",
   "tocPath": ""

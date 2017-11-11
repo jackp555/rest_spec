@@ -60,6 +60,7 @@
       "description": "",
       "isKey": false,
       "dataType": "stringKeyAttributeMappingSourceValuePair",
+      // "dataType": "stringKeyAttributeMappingSourceValuePair",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": true,

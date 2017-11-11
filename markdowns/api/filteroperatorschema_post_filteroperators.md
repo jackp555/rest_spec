@@ -1,6 +1,6 @@
-# Create synchronizationTemplate
+# Create filterOperatorSchema
 
-Use this API to create a new synchronizationTemplate.
+Use this API to create a new filterOperatorSchema.
 ## Permissions
 One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](../../../concepts/permissions_reference.md).
 
@@ -13,8 +13,7 @@ One of the following permissions is required to call this API. To learn more, in
 ## HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-POST /applications/<id>/synchronization/templates
-POST /servicePrincipals/<id>/synchronization/templates
+POST /filterOperators
 
 ```
 ## Request headers
@@ -23,52 +22,52 @@ POST /servicePrincipals/<id>/synchronization/templates
 | Authorization  | Bearer {code}|
 
 ## Request body
-In the request body, supply a JSON representation of [synchronizationTemplate](../resources/synchronizationtemplate.md) object.
+In the request body, supply a JSON representation of [filterOperatorSchema](../resources/filteroperatorschema.md) object.
 
 
 ## Response
-If successful, this method returns `201, Created` response code and [synchronizationTemplate](../resources/synchronizationtemplate.md) object in the response body.
+If successful, this method returns `201, Created` response code and [filterOperatorSchema](../resources/filteroperatorschema.md) object in the response body.
 
 ## Example
 ##### Request
 Here is an example of the request.
 <!-- {
   "blockType": "request",
-  "name": "create_synchronizationtemplate_from_synchronization"
+  "name": "create_filteroperatorschema_from_filteroperators"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/applications/<id>/synchronization/templates
+POST https://graph.microsoft.com/beta/filterOperators
 Content-type: application/json
-Content-length: 161
+Content-length: 166
 
 {
-  "applicationId": "1547f11c-7f96-4029-8b07-2a486d959c1f",
-  "default": true,
-  "description": "description-value",
-  "discoverable": true,
-  "factoryTag": "factoryTag-value"
+  "arity": "arity-value",
+  "multivaluedComparisonType": "multivaluedComparisonType-value",
+  "supportedAttributeTypes": [
+    "supportedAttributeTypes-value"
+  ]
 }
 ```
-In the request body, supply a JSON representation of [synchronizationTemplate](../resources/synchronizationtemplate.md) object.
+In the request body, supply a JSON representation of [filterOperatorSchema](../resources/filteroperatorschema.md) object.
 ##### Response
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
   "truncated": true,
-  "@odata.type": "microsoft.graph.synchronizationTemplate"
+  "@odata.type": "microsoft.graph.filterOperatorSchema"
 } -->
 ```http
 HTTP/1.1 201 Created
 Content-type: application/json
-Content-length: 181
+Content-length: 190
 
 {
-  "id": "id-value",
-  "applicationId": "1547f11c-7f96-4029-8b07-2a486d959c1f",
-  "default": true,
-  "description": "description-value",
-  "discoverable": true,
-  "factoryTag": "factoryTag-value"
+  "name": "name-value",
+  "arity": "arity-value",
+  "multivaluedComparisonType": "multivaluedComparisonType-value",
+  "supportedAttributeTypes": [
+    "supportedAttributeTypes-value"
+  ]
 }
 ```
 
@@ -76,7 +75,7 @@ Content-length: 181
 2015-10-25 14:57:30 UTC -->
 <!-- {
   "type": "#page.annotation",
-  "description": "Create synchronizationTemplate",
+  "description": "Create filterOperatorSchema",
   "keywords": "",
   "section": "documentation",
   "tocPath": ""
